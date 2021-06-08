@@ -124,30 +124,22 @@ namespace spheres {
 
 			if (!(other.position - position) <= other.radius + radius) {
 				if (other.mass >= mass) {
-					/*transfer = other.position - position;
+					transfer = other.position - position;
 					transfer *= ((velocity || transfer) / (transfer || transfer));
 					velocity -= transfer;
 
 					receive = position - other.position;
 					receive *= ((other.velocity || receive) / (receive || receive));
 					velocity += receive;
-
-					velocity *= 2;*/
-
-					velocity = other.velocity * 2;
 				}
 				else {
-					/*transfer = position - other.position;
+					transfer = position - other.position;
 					transfer *= ((other.velocity || transfer) / (transfer || transfer));
 					other.velocity -= transfer;
 
 					receive = position - other.position;
 					receive *= ((velocity || receive) / (receive || receive));
 					other.velocity += receive;
-
-					other.velocity *= 8;*/
-
-					other.velocity = velocity * 2;
 				}
 			}
 		}
