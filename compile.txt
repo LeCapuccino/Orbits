@@ -1,7 +1,3 @@
-g++ -c source/main.cpp -o source/main.o -I"C:\Projetos\Programação\Proj\Physics\Orbits\include"
-g++ source/main.o -o program/Orbits.exe -L"C:\Projetos\Programação\Proj\Physics\Orbits\libraries" -lfreeglut -lopengl32 -Wl,--subsystem,windows
-.\program\Orbits
-
-g++ -c source/main.cpp -o source/main.o -I"C:\Projetos\Programação\Proj\Physics\Orbits\include"
-g++ source/main.o -o program/Orbits.exe -L"C:\Projetos\Programação\Proj\Physics\Orbits\libraries" -lfreeglut -lopengl32
+g++ -c source/main.cpp -o source/main.o -I"C: ... \include"
+g++ source/main.o -o program/Orbits.exe -L"C: ... \libraries" -lfreeglut -lopengl32 -Wl,--subsystem,windows
 .\program\Orbits
