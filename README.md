@@ -13,7 +13,6 @@ This is a Orbits simulations with n bodys in the tridimensional space, any force
   - Z + Scroll or Z + Mouse Right Button: Move body in z axe. <br/>
   - C: Change the body color. <br/>
   - Enter: Complete the body creation. <br/>
-<br/>
 - Mouse Right Button: Rotate the space visualization. <br/>
 - Scroll: Scale the space visualization. <br/>
 - G: Generate the bodys with random position, mass and color. <br/>
