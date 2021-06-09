@@ -7,7 +7,7 @@ This is a Orbits simulations with n bodys in the tridimensional space, any force
 ## Use Mode
 
 - Mouse Left Button: Create a body <br/>
-  - Left Button + Scroll: Set body badius. <br/>
+  - Left Button + Scroll: Set body radius. <br/>
   - X + Scroll or X + Mouse Right Button: Move body in x axe. <br/>
   - Y + Scroll or Y + Mouse Right Button: Move body in y axe. <br/>
   - Z + Scroll or Z + Mouse Right Button: Move body in z axe. <br/>
