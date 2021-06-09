@@ -24,11 +24,6 @@ namespace settings {
 
 	quantities::Scalar instant;
 	quantities::Scalar moment;
-	//quantities::vel;
-
-	double soft = 0.001;
-
-	quantities::Vector softening = quantities::Vector(soft, soft, soft);
 }
 
 #endif
