@@ -38,15 +38,15 @@ namespace functions {
 		objects::element = 0;
 	}
 
-	void generate() {
+	void generate(bool gravitational) {
 		seed();
 
 		settings::moment = quantities::Scalar(0);
 
-		objects::element = 2;//random(objects::amount);
+		objects::element = random(objects::amount);
 
 		for (int i = 0; i < objects::element; i++) {
-			objects::bodys[i].choice();
+			objects::bodys[i].choice(gravitational);
 		}
 	}
 
@@ -114,13 +114,16 @@ namespace functions {
 				if (objects::bodys[i].start) {
 					for (int j = 0; j < objects::element; j++) {
 						if (j != i) {
-							objects::bodys[i].colision(objects::bodys[j]);
-							objects::bodys[i].getacel(objects::bodys[j], settings::softening);
+							objects::bodys[i].collision(objects::bodys[j]);
+
+							if (settings::gravitational) {
+								objects::bodys[i].getacel(objects::bodys[j]);
+							}
 						}
 					}
-
-					objects::bodys[i].update(settings::moment);
 				}
+
+				objects::bodys[i].update(settings::moment);
 			}
 
 			settings::moment += settings::instant;
@@ -163,12 +166,9 @@ namespace functions {
 				objects::bodys[objects::element].col();
 				break;
 
-			case 103:     //m
-				generate();
-				break;
-
-			case 109:     //m
-				objects::bodys[objects::element].vel();
+			case 103:     //g
+				generate(settings::gravitational);
+				settings::generate = true;
 				break;
 
 			case 114:     //r
@@ -180,6 +180,12 @@ namespace functions {
 					objects::bodys[objects::element].fill();
 					objects::bodys[objects::element].creation = false;
 					objects::element++;
+				}
+				break;
+
+			case 112:    //p
+				if (!settings::generate) {
+					settings::gravitational = !settings::gravitational;
 				}
 				break;
 
@@ -479,5 +485,5 @@ namespace functions {
 		glutPostRedisplay();
 	}
 }
- 
+
 #endif
