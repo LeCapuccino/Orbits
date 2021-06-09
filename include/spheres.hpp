@@ -105,8 +105,8 @@ namespace spheres {
 			color = random(7);
 		}
 
-		void getacel(Sphere other, quantities::Vector soft) {
-			aceleration += ((other.position - position + soft) / ((!(other.position - position + soft))^3)) * other.mass;
+		void getacel(Sphere other) {
+			aceleration += ((other.position - position) / ((!(other.position - position))^3)) * other.mass;
 		}
 
 		void update(quantities::Scalar moment) {
