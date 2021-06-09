@@ -118,29 +118,14 @@ namespace spheres {
 			mass = quantities::Scalar(radius / settings::mul);
 		}
 
-		void colision(Sphere &other) {
-			quantities::Vector transfer;
-			quantities::Vector receive;
+		void collision(spheres::Sphere other) {
+			if (!(position - other.position) <= radius + other.radius) {
+				quantities::Vector dist = position - other.position;
+				quantities::Vector resv = velocity - other.velocity;
+				quantities::Vector resa = aceleration - other.aceleration;
 
-			if (!(other.position - position) <= other.radius + radius) {
-				if (other.mass >= mass) {
-					transfer = other.position - position;
-					transfer *= ((velocity || transfer) / (transfer || transfer));
-					velocity -= transfer;
-
-					receive = position - other.position;
-					receive *= ((other.velocity || receive) / (receive || receive));
-					velocity += receive;
-				}
-				else {
-					transfer = position - other.position;
-					transfer *= ((other.velocity || transfer) / (transfer || transfer));
-					other.velocity -= transfer;
-
-					receive = position - other.position;
-					receive *= ((velocity || receive) / (receive || receive));
-					other.velocity += receive;
-				}
+				velocity -= dist * ((resv || dist) / (!dist * !dist));
+				aceleration -= dist * ((resa || dist) / (!dist * !dist));
 			}
 		}
 
