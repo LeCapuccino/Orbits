@@ -479,5 +479,5 @@ namespace functions {
 		glutPostRedisplay();
 	}
 }
-
+ 
 #endif
