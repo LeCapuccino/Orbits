@@ -9,7 +9,7 @@
 #define OBJECTS_HPP
 
 namespace objects {
-	const int amount = 64;
+	const int amount = 96;
 
 	axis::Axis guide;
 	spheres::Sphere bodys[amount];
