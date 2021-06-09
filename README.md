@@ -16,7 +16,7 @@ This is a Orbits simulations with n bodys in the tridimensional space, any force
 - Mouse Right Button: Rotate the space visualization. <br/>
 - Scroll: Scale the space visualization. <br/>
 - G: Generate the bodys with random position, mass and color. <br/>
-- P: Unable the gravity in simulation before generate the bodys, dont work after generate bodys. <br/>
+- P: Enable or disable the gravity in simulation before generate the bodys, dont work after generate bodys. <br/>
 - V: Change the visualization axis state. <br/>
 - R: Restart the program. <br/>
 
